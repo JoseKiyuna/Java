@@ -1,33 +1,25 @@
 
 public class Predio implements EmissaoCarbono{
 	private int pessoas;
-	private boolean energia;
 	private int lampadas;
 	private int arCondicionados;
 	
-	public Predio() {}
+	public Predio() {
+		
+	}
 	
-	public Predio(int pessoas, boolean energia, int lampadas, int arCondicionados) {
+	public Predio(int pessoas, int lampadas, int arCondicionados) {
 		this.pessoas = pessoas;
-		this.energia = energia;
 		this.lampadas = lampadas;
 		this.arCondicionados = arCondicionados;
 	}
-
+	
 	public int getPessoas() {
 		return pessoas;
 	}
 
 	public void setPessoas(int pessoas) {
 		this.pessoas = pessoas;
-	}
-
-	public boolean isEnergia() {
-		return energia;
-	}
-
-	public void setEnergia(boolean energia) {
-		this.energia = energia;
 	}
 
 	public int getLampadas() {
@@ -47,11 +39,7 @@ public class Predio implements EmissaoCarbono{
 	}
 	
 	public double quantidadeEmitida() {
-		double gasto = 14.4 * lampadas + 10 * pessoas + 100 * arCondicionados;
-		if(energia) {
-			gasto /= 2;
-		}
-		return gasto;
+		return 14.4*lampadas +  10 * pessoas + 100 * arCondicionados;
 	}
 	
 }
