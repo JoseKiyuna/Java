@@ -1,22 +1,22 @@
 
-public class Carro implements EmissaoCarbono{
-	private double combustivel;
+public class Automovel implements EmissaoCarbono{
+	private String combustivel;
 	private double km;
 	
+	public Automovel() {
+		
+	}
 	
-	
-	public Carro(){}
-	
-	public Carro(double combustivel, double km) {
+	public Automovel(String combustivel, double km) {
 		this.combustivel = combustivel;
 		this.km = km;
 	}
-
-	public double getCombustivel() {
+	
+	public String getCombustivel() {
 		return combustivel;
 	}
 
-	public void setCombustivel(double combustivel) {
+	public void setCombustivel(String combustivel) {
 		this.combustivel = combustivel;
 	}
 
@@ -24,20 +24,13 @@ public class Carro implements EmissaoCarbono{
 		return km;
 	}
 
+
 	public void setKm(double km) {
 		this.km = km;
 	}
-	
+
 	public double quantidadeEmitida() {
-		if(combustivel == 1) {
-			return 96 * km;
-		}else if(combustivel == 2) {
-			return 53 * km;
-		}else if(combustivel == 3) {
-			return 171 * km;
-		}else {
-			return 0;
-		}
+		return 96 * km;
 	}
-	
+
 }
